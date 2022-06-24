@@ -1,0 +1,5 @@
+---
+# nnmi_csv_inventory.yaml
+plugin: nnmi_csv
+path_to_inventory: nnmi_csv_files # Directory location of CSV
+csv_file: nodes_all.csv           # Name of the inventory file 
