@@ -2,7 +2,7 @@
 
 The inventory plugin reads a NNMi CSV export with network devices and converts this to an ansible inventory. Network devices will be grouped by type.
 
-What is NNMi? 
+What is NNMi?  
 NNMi is a network management software provided by Microfocus, which provides visibility into the performance and availability of network devices. The CSV export contains information about the devices managed by NNMi.
 
 ## Configuring the plugin
