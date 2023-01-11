@@ -1,11 +1,13 @@
-# ansible NNMi csv inventory plugin
+# Ansible NNMi CSV Inventory Plugin
 
-The inventory plugin reads a NNMi CSV export with network devices and converts this to an ansible inventory.
-Network devices will be grouped by type.
+The inventory plugin reads a NNMi CSV export with network devices and converts this to an ansible inventory. Network devices will be grouped by type.
 
-## Configure
+What is NNMi?
+NNMi is a network management software provided by Microfocus, which provides visibility into the performance and availability of network devices. The CSV export contains information about the devices managed by NNMi.
 
-- Create a config file:
+## Configuring the plugin
+
+1. Create a config file:
 
 ``` yaml
 ---
@@ -15,7 +17,7 @@ path_to_inventory: <csv_inventory> # Directory location of CSV
 csv_file: <csv_file>               # Name of the CSV file
 ```
 
-- Create an ansible.cfg
+2. Create an ansible.cfg
   - Add the yaml config file as a inventory source to the ansible.cfg
   - Add the plugin directory
   - Enable the nnmi_csv plugin
@@ -31,7 +33,7 @@ inventory_plugins = plugins/inventory
 enable_plugins = nnmi_csv
 ```
 
-File & directory structure:
+## File & directory structure:
 
 ``` shell
 .
@@ -44,8 +46,17 @@ File & directory structure:
         └── nnmi_csv.py
 ```
 
-## Test
+## Usage
 
-``` shell
-ansible-inventory --list
-```
+Example usage of ansible-inventory command:
+
+`ansible-inventory --list`
+
+## Troubleshoot
+
+If you are facing any errors, please make sure that
+
+-   File and directory structure is followed as mentioned above
+-   Correct path and file name is provided in the nnmi_csv_inventory.yml
+-   ansible.cfg is updated correctly with the required details
+
